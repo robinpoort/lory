@@ -1,0 +1,41 @@
+.slider {
+  position: relative;
+  user-select: none;
+}
+
+.slides-container {
+  position: relative;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slides-container ul {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+.slides-container li {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.slides {
+  display: inline-block;
+}

@@ -5,33 +5,36 @@
     <title>lory</title>
     <meta name="description" content="Touch enabled minimalistic slider written in vanilla JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./static/app.css" />
+    <link rel="stylesheet" type="text/css" href="./static/lory.css" />
+    <link rel="stylesheet" type="text/css" href="./static/demo.css" />
 </head>
 
 <body>
 
 <div class="slider js-slider">
 
-    <button class="prev js-slider-prev">
+    <button class="slider-prev js-slider-prev">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+        <span class="slider-prev__label">Previous slide</span>
     </button>
 
-    <button class="next js-slider-next">
+    <button class="slider-next js-slider-next">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+        <span class="slider-prev__label">Next slide</span>
     </button>
 
-    <div class="frame js-slider-frame">
+    <div class="slides-container js-slider-frame">
         <ul class="slides js-slider-slides">
-            <li class="js_slide"><a href="#">1</a></li>
-            <li class="js_slide">2</li>
-            <li class="js_slide"><a href="#">3</a></li>
-            <li class="js_slide">4</li>
-            <li class="js_slide">5</li>
-            <li class="js_slide">6</li>
+            <li class="js-slide"><a href="#">1</a></li>
+            <li class="js-slide">2</li>
+            <li class="js-slide"><a href="#">3</a></li>
+            <li class="js-slide">4</li>
+            <li class="js-slide">5</li>
+            <li class="js-slide">6</li>
         </ul>
     </div>
 
-    <div class="dots js-slider-dots"></div>
+    <div class="slider-dots js-slider-dots"></div>
 </div>
 
 <script src="./dist/lory.min.js"></script>
@@ -43,7 +46,7 @@
 
         // Default variables
         var slider          = document.querySelector('.js-slider');
-        var slides          = slider.querySelectorAll('.js_slide');
+        var slides          = slider.querySelectorAll('.js-slide');
         var slidesLength    = slides.length;
         var dots            = slider.querySelector('.js-slider-dots');
         var dot             = document.createElement('button');
@@ -55,6 +58,7 @@
             if (e.type === 'before.lory.init') {
                 for (var i = 0; i < slidesLength; i++) {
                     var clone = dot.cloneNode();
+                    clone.innerHTML = 'slide ' + (i+1);
                     dots.appendChild(clone);
                 }
                 dots.childNodes[0].classList.add(activeClass);
@@ -97,7 +101,7 @@
 
             // Enable links in active item
             if (e.type === 'after.lory.init') {
-                var activeItem = slider.querySelector('.js_slide.active');
+                var activeItem = slider.querySelector('.js-slide.active');
                 var activeLinks = activeItem.querySelectorAll('a');
                 for (var i = 0; i < activeLinks.length; i++) {
                     var link = activeLinks[i];
@@ -119,12 +123,14 @@
 
             // Enable links in active item
             if (e.type === 'after.lory.slide') {
-                var currentItem = slider.querySelector('.js_slide.active');
+                var currentItem = slider.querySelector('.js-slide.active');
                 var activeLinks = currentItem.querySelectorAll('a');
-                for (var i = 0; i < activeLinks.length; i++) {
-                    var link = activeLinks[i];
-                    link.removeAttribute('tabindex', '-1');
-                    link.setAttribute('aria-hidden', 'false');
+                if (activeLinks.length) {
+                    for (var i = 0; i < activeLinks.length; i++) {
+                        var link = activeLinks[i];
+                        link.removeAttribute('tabindex', '-1');
+                        link.setAttribute('aria-hidden', 'false');
+                    }
                 }
             }
         }

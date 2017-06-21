@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+  box-sizing:border-box;
+}
+
+body {
+  background: #fff;
+  padding: 40px;
+}
+
+.slides-container li {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 130px;
+  text-align: center;
+  background: #34495e;
+  color: white;
+}
+
+.slider-dots {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.slider-dots > button {
+  padding: 0;
+  background:none;
+  background-color: #eee;
+  border: 1px solid #666;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 1px rgba(black, 0.2);
+  display: inline-block;
+  height: 0;
+  padding-top: 18px;
+  overflow: hidden;
+  width: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: #ccc;
+  }
+
+  &.is-active {
+    background: #2c3e50;
+    border-color: #2c3e50;
+  }
+}
+
+.slider-prev,
+.slider-next {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background:none;
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  margin-top: -25px;
+  display: block;
+  cursor: pointer;
+  background: white;
+}
+
+.slider-prev {
+  left: 0;
+}
+
+.slider-next {
+  right: 0;
+}
+
+.slider-prev svg,
+.slider-next svg {
+  width: 25px;
+}
+
+.slider-prev__label,
+.slider-next__label {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
