@@ -1,6 +1,5 @@
 .slider {
-  position: relative;
-  user-select: none; }
+  position: relative; }
 
 .slides-container {
   position: relative;
