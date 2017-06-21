@@ -22,10 +22,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem; }
-  .slide:last-child {
-    margin-right: 0; }
+  font-size: 16px;
+  line-height: 24px; }
   .slide a {
     color: inherit; }
 
