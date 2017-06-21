@@ -1,4 +1,4 @@
-# More accessible lori
+# More accessible lory
 
 - Responsive
 - Accessible
