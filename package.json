@@ -1,0 +1,15 @@
+{
+  "name": "lory",
+  "description": "Accessible version of original [Lory](https://github.com/meandmax/lory)",
+  "version": "v2.2.1.1",
+  "homepage": "https://github.com/robinpoort/lory",
+  "author": "Robin Poort",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinpoort/lory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robinpoort/lory/issues"
+  },
+  "license": "MIT"
+}
