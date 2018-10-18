@@ -1,7 +1,7 @@
 {
   "name": "lory",
   "description": "Accessible version of original [Lory](https://github.com/meandmax/lory)",
-  "version": "v2.2.1.1",
+  "version": "2.2.1.2",
   "homepage": "https://github.com/robinpoort/lory",
   "author": "Robin Poort",
   "repository": {
